@@ -1,0 +1,85 @@
+start
+person Ava
+infer Ava bloodtype
+# should be O: 0.36, A: 0.45, B: 0.13, AB: 0.06
+end
+
+start
+person Ava
+person Ben
+person Camila parents Ava Ben
+observe Camila bloodtype AB
+infer Ava bloodtype
+# should be O: 0.00, A: 0.45, B: 0.35, AB: 0.20
+end
+
+start
+person Ava
+person Ben
+person Camila parents Ava Ben
+observe Camila bloodtype AB
+observe Ben bloodtype A
+infer Ava bloodtype
+# should be O: 0.00, A: 0.00, B: 0.70, AB: 0.30
+end
+
+start
+person Ava
+person Ben
+person Camila parents Ava Ben
+observe Camila bloodtype O
+infer Ava bloodtype
+# should be O: 0.60, A: 0.30, B: 0.10, AB: 0.00
+end
+
+start
+person Ava
+person Ben
+person Camila parents Ava Ben
+observe Camila bloodtype O
+observe Ben bloodtype A
+infer Ava bloodtype
+# should be O: 0.60, A: 0.30, B: 0.10, AB: 0.00
+end
+
+start
+person Ava
+person Ben
+person Camila parents Ava Ben
+observe Camila bloodtype A
+infer Ava bloodtype
+# should be O: 0.24, A: 0.66, B: 0.04, AB: 0.06
+end
+
+start
+person Ava
+person Ben
+person Camila parents Ava Ben
+observe Camila bloodtype A
+observe Ben bloodtype B
+infer Ava bloodtype
+# should be O: 0.00, A: 0.90, B: 0.00, AB: 0.10
+end
+
+start
+person Ava
+person Ben
+person Camila parents Ava Ben
+person David parents Ava Ben
+observe Camila bloodtype AB
+infer David bloodtype
+# should be O: 0.09, A: 0.3375, B: 0.2075, AB: 0.365
+end
+
+
+start
+person Ava
+person Ben
+person Camila parents Ava Ben
+person David parents Ava Ben
+observe Camila bloodtype O
+infer David bloodtype
+# should be O: 0.64, A: 0.2625, B: 0.0825, AB: 0.015
+end
+
+quit
